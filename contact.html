@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — ShopEase</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Shop<span>Ease</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">Team</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <button class="nav-cart" id="cartBtn">
+        🛒 Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- ===== Page Header ===== -->
+  <section class="hero" style="padding:50px 20px;">
+    <h1>Contact Us</h1>
+    <p>Have a question, suggestion, or issue? Send us a message — we'd love to hear from you.</p>
+  </section>
+
+  <!-- ===== Contact Layout ===== -->
+  <section class="section">
+    <div class="contact-layout">
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <div class="form-success" id="formSuccess">
+          ✅ Thank you! Your message has been received. We'll get back to you soon.
+        </div>
+        <form id="contactForm" novalidate>
+          <div class="form-group" id="nameGroup">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name">
+            <span class="error-msg">Please enter your full name.</span>
+          </div>
+
+          <div class="form-group" id="emailGroup">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+            <span class="error-msg">Please enter a valid email address.</span>
+          </div>
+
+          <div class="form-group" id="subjectGroup">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="order">Order Support</option>
+              <option value="feedback">Feedback / Suggestion</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="error-msg">Please select a subject.</span>
+          </div>
+
+          <div class="form-group" id="messageGroup">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Type your message here..."></textarea>
+            <span class="error-msg">Please enter a message (minimum 10 characters).</span>
+          </div>
+
+          <button type="submit" class="btn" style="width:100%;">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <h4>Address</h4>
+            <p>Yola, Adamawa State, Nigeria</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div>
+            <h4>Phone</h4>
+            <p>+234 800 000 0000</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <p>support@shopease.example</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">🕒</div>
+          <div>
+            <h4>Hours</h4>
+            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+
+        <div class="map-placeholder">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=12.40%2C9.17%2C12.55%2C9.29&amp;layer=mapnik&amp;marker=9.2035%2C12.4954"
+            loading="lazy"
+            title="Map showing Yola, Adamawa State, Nigeria">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FAQ Accordion ===== -->
+    <div class="faq-section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">
+          How long does delivery take?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Standard delivery typically takes 2-5 business days depending on your location within Nigeria.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          What payment methods are accepted?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>This is a demo project. In a real deployment, we would support bank transfer, card payments, and mobile money options.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I return a product?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes — items can be returned within 7 days of delivery, provided they are unused and in original packaging.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I track my order?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Once your order ships, you will receive a confirmation message with tracking details via email.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Cart Sidebar ===== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart" id="closeCart" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">₦0</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>ShopEase</h4>
+        <p>Your trusted online store for everyday essentials at affordable prices.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">Team</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: support@shopease.example</p>
+        <p>Phone: +234 800 000 0000</p>
+        <p>Yola, Adamawa State, Nigeria</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 ShopEase. Built for IMT 405 Capstone Project. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    /* ============================
+       Contact Form Validation
+       ============================ */
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("contactForm");
+      const successMsg = document.getElementById("formSuccess");
+
+      function validateField(input, group, validateFn) {
+        if (validateFn(input.value.trim())) {
+          group.classList.remove("invalid");
+          return true;
+        } else {
+          group.classList.add("invalid");
+          return false;
+        }
+      }
+
+      const validators = {
+        name: v => v.length >= 2,
+        email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+        subject: v => v !== "",
+        message: v => v.length >= 10
+      };
+
+      // Live validation on blur
+      Object.keys(validators).forEach(field => {
+        const input = document.getElementById(field);
+        const group = document.getElementById(field + "Group");
+        input.addEventListener("blur", () => validateField(input, group, validators[field]));
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        successMsg.classList.remove("show");
+
+        let allValid = true;
+        Object.keys(validators).forEach(field => {
+          const input = document.getElementById(field);
+          const group = document.getElementById(field + "Group");
+          const valid = validateField(input, group, validators[field]);
+          if (!valid) allValid = false;
+        });
+
+        if (allValid) {
+          successMsg.classList.add("show");
+          form.reset();
+          document.querySelectorAll(".form-group").forEach(g => g.classList.remove("invalid"));
+          successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+    });
+
+    /* ============================
+       FAQ Accordion
+       ============================ */
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".faq-question").forEach(question => {
+        question.addEventListener("click", () => {
+          const item = question.parentElement;
+          const wasOpen = item.classList.contains("open");
+
+          document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
+
+          if (!wasOpen) {
+            item.classList.add("open");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
