@@ -3,6 +3,7 @@
    ============================ */
 
 const CART_KEY = "shopease_cart";
+const ORDER_EMAIL = "ibrahimbubaclement199@gmail.com";
 
 /* ---------- Helpers ---------- */
 function formatPrice(amount) {
@@ -63,6 +64,31 @@ function removeFromCart(productId) {
   cart = cart.filter(item => item.id !== productId);
   saveCart(cart);
   renderCartSidebar();
+}
+
+function sendOrderEmail() {
+  const cart = getCart();
+  const lines = cart.map(item => {
+    const product = PRODUCTS.find(p => p.id === item.id);
+    if (!product) return "";
+    const itemTotal = product.price * item.qty;
+    return `${product.name} x ${item.qty} = ${formatPrice(itemTotal)}`;
+  }).filter(Boolean);
+
+  const subject = "New ShopEase Order";
+  const body = [
+    "Hello, I want to place this order:",
+    "",
+    ...lines,
+    "",
+    `Total: ${formatPrice(getCartTotal())}`,
+    "",
+    "Customer name:",
+    "Phone number:",
+    "Delivery address:"
+  ].join("\n");
+
+  window.location.href = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 /* ---------- Toast ---------- */
@@ -198,10 +224,8 @@ document.addEventListener("DOMContentLoaded", () => {
         showToast("Your cart is empty!");
         return;
       }
-      showToast("Checkout successful! (demo only)");
-      saveCart([]);
-      renderCartSidebar();
-      setTimeout(closeCart, 1200);
+      sendOrderEmail();
+      showToast("Email draft opened with your order.");
     });
   }
 });
