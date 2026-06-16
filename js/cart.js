@@ -225,7 +225,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
       sendOrderEmail();
-      showToast("Email draft opened with your order.");
+      saveCart([]);
+      renderCartSidebar();
+      showToast("Email draft opened. Cart cleared.");
+      setTimeout(closeCart, 1200);
     });
   }
 });
