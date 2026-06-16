@@ -3,7 +3,7 @@
    ============================ */
 
 const CART_KEY = "shopease_cart";
-const ORDER_EMAIL = "ibrahimbubaclement199@gmail.com";
+const ORDER_EMAIL = "ibrahimmillboi@gmail.com";
 
 /* ---------- Helpers ---------- */
 function formatPrice(amount) {
