@@ -20,6 +20,8 @@ page and a Contact page with form validation and an FAQ accordion.
 | Eli Elisha Burmi | Content Lead |
 | Bello Ibrahim | Content Lead |
 | Musa Shehu | Content Lead |
+| Ibrahim Umar | Content Lead |
+| Ibrahim Buba Clement | Frontend Developer |
 
 ## Technologies Used
 - HTML5 — semantic page structure
